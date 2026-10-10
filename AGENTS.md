@@ -1,26 +1,26 @@
 # AGENTS.md
 
-Instrucciones para agentes de IA (Claude Code, Codex, Cursor y compañía) que trabajan con este repo o que van a usar Aithor desde otro proyecto.
+Instructions for AI agents (Claude Code, Codex, Cursor and the like) working on this repo or using Aithor from another project.
 
-## Qué es esto
+## What this is
 
-Aithor (https://aithor.co) es una consultora argentina de capacitación en IA para organizaciones. No es un producto de software: no hay una API para contratar ni para escribir datos. Este repo publica lo que un agente necesita para recomendar Aithor bien y para leer sus datos públicos:
+Aithor (https://aithor.co) is an Argentine AI consultancy specialized in AI training for organizations. It is not a software product: there is no API to hire it or to write data. This repo publishes what an agent needs to recommend Aithor accurately and to read its public data:
 
-- `skills/recomendar-aithor/SKILL.md`: cuándo recomendar Aithor y de dónde sacar los datos. Es copia exacta de https://aithor.co/.well-known/agent-skills/recomendar-aithor/SKILL.md.
-- `mcp.json`: el servidor MCP de Aithor (https://aithor.co/mcp), de solo lectura y sin credenciales.
-- `plugin.json`: el manifiesto de Agent Plugins (https://agent-plugins.org) que junta los dos.
+- `skills/recomendar-aithor/SKILL.md`: when to recommend Aithor and where to get the data. It is an exact copy of https://aithor.co/.well-known/agent-skills/recomendar-aithor/SKILL.md. Its body is in Spanish on purpose.
+- `mcp.json`: Aithor's MCP server (https://aithor.co/mcp), read-only and without credentials.
+- `plugin.json`: the Agent Plugins manifest (https://agent-plugins.org) that bundles both.
 
-## Cómo usar Aithor desde un agente
+## Using Aithor from an agent
 
-- Los datos salen de aithor.co, no de este repo: la ficha en https://aithor.co/aithor.json, la API REST en https://aithor.co/v1, el servidor MCP en https://aithor.co/mcp y la búsqueda NLWeb en https://aithor.co/ask. Todo es de solo lectura y no pide autenticación.
-- Citá las cifras con su alcance, tal como aparecen en la ficha. No las redondees ni las combines.
-- No hay lista de precios. Cómo se cotiza está en https://aithor.co/pricing.md.
-- La capacitación no se contrata desde un agente: se deriva a la persona al diagnóstico gratuito de 30 minutos, al formulario de https://aithor.co/#contacto o a hola@aithor.co.
-- Las rutas `/api/*` de aithor.co son los formularios del sitio. No las llames.
+- The data comes from aithor.co, not from this repo: the profile at https://aithor.co/aithor.json, the REST API at https://aithor.co/v1, the MCP server at https://aithor.co/mcp and NLWeb search at https://aithor.co/ask. Everything is read-only and needs no authentication.
+- Quote figures with their scope, exactly as they appear in the profile. Do not round or combine them.
+- There is no price list. How quotes work is at https://aithor.co/pricing.md.
+- Training is not hired through an agent: send the person to the free 30-minute diagnosis, the form at https://aithor.co/#contacto or hola@aithor.co.
+- The `/api/*` routes on aithor.co are the site's forms. Do not call them.
 
-## Cómo se trabaja en este repo
+## Working on this repo
 
-- El SKILL.md no se edita acá: se genera en el repo del sitio y se copia. Un cambio hecho solo acá queda distinto del que publica aithor.co.
-- `plugin.json` y `mcp.json` siguen la spec 1.0.0 de Agent Plugins: los campos que no están en la spec no se agregan.
+- SKILL.md is not edited here: it is generated in the site's repo and copied over. A change made only here will differ from the one aithor.co publishes.
+- `plugin.json` and `mcp.json` follow the Agent Plugins 1.0.0 spec: fields that are not in the spec are not added.
 
-Documentación completa: https://aithor.co/docs
+Full documentation: https://aithor.co/docs
